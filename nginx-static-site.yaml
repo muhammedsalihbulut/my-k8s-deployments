@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: nginx-static-site
   annotations:
-    msb-cd-trigger: "1754641124"
+    msb-cd-trigger: "1754641950"
 spec:
   replicas: 1
   selector:
