@@ -2,8 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: nginx-static-site
-  annotations:
-    msb-cd-trigger: "1754642685"
 spec:
   replicas: 1
   selector:
@@ -16,28 +14,11 @@ spec:
     spec:
       nodeSelector:
         kubernetes.io/hostname: "worker1"
-      initContainers:
-        - name: fetch-site
-          image: minio/mc
-          env:
-            - name: MC_HOST_minio
-              value: "http://minioadmin:minioadmin123@minio-svc:9000"
-          command: ["mc"]
-          args: ["cp", "--recursive", "minio/msbblt/", "/site/"]
-          volumeMounts:
-            - name: site-data
-              mountPath: /site
       containers:
         - name: nginx
-          image: nginx:alpine
-          volumeMounts:
-            - name: site-data
-              mountPath: /usr/share/nginx/html
+          image: msbblttt/nginx-static-site:build-123  
           ports:
             - containerPort: 80
-      volumes:
-        - name: site-data
-          emptyDir: {}
 ---
 apiVersion: v1
 kind: Service
