@@ -16,7 +16,7 @@ spec:
         kubernetes.io/hostname: "worker1"
       containers:
         - name: nginx
-          image: msbblttt/nginx-static-site:49
+          image: msbblttt/nginx-static-site:50
           ports:
             - containerPort: 80
 ---
