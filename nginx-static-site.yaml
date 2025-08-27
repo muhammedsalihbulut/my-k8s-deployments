@@ -13,7 +13,7 @@ spec:
         app: nginx-static-site
     spec:
       nodeSelector:
-        kubernetes.io/hostname: "worker1"
+        kubernetes.io/hostname: "server2"          ## Bu kısmı isterseniz kaldırabilirsiniz istersenizde Nginx'in çalışmasını istediğiniz node'a göre güncellersiniz
       containers:
         - name: nginx
           image: msbblttt/nginx-static-site:9
