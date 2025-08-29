@@ -16,7 +16,7 @@ spec:
         kubernetes.io/hostname: "server2"          ## Bu kısmı isterseniz kaldırabilirsiniz istersenizde Nginx'in çalışmasını istediğiniz node'a göre güncellersiniz
       containers:
         - name: nginx
-          image: msbblttt/nginx-static-site:9
+          image: msbblttt/nginx-static-site:10
           ports:
             - containerPort: 80
 ---
